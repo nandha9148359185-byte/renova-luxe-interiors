@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renova Luxe Interiors | Luxury Interior Design (Demo)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0b0b;
+            color: #e5e5e5;
+        }
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-gold {
+            background-color: #C5A059;
+        }
+        .text-gold {
+            color: #C5A059;
+        }
+        .border-gold {
+            border-color: #C5A059;
+        }
+        .bg-gold-hover:hover {
+            background-color: #b08d4b;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #dfc085 0%, #C5A059 50%, #9a7836 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f0f0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A059;
+        }
+    </style>
+</head>
+<body class="bg-[#0b0b0b] text-[#e5e5e5] antialiased selection:bg-[#C5A059] selection:text-black">
+
+    <!-- DEMO BANNER -->
+    <div class="bg-amber-950/80 border-b border-amber-700/50 text-amber-200 text-xs sm:text-sm py-2 px-4 text-center font-medium sticky top-0 z-50 backdrop-blur-md">
+        <i class="fa-solid fa-triangle-exclamation mr-2 text-amber-400"></i> DEMO WEBSITE CONCEPT — All projects, reviews, statistics, and qualifications shown are fictional design mockups for demonstration purposes only.
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header id="navbar" class="sticky top-[37px] sm:top-[41px] z-40 bg-[#0b0b0b]/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-[#C5A059] flex items-center justify-center bg-black text-[#C5A059] font-serif font-bold text-xl transition-transform group-hover:scale-105">
+                    R
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-wider text-white">RENOVA LUXE</span>
+                    <span class="text-[10px] tracking-[0.25em] text-[#C5A059] uppercase font-semibold">Interiors · Demo</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#hero" class="text-[#C5A059] transition-colors hover:text-[#C5A059]">Home</a>
+                <a href="#services" class="text-neutral-300 hover:text-[#C5A059] transition-colors">Services</a>
+                <a href="#portfolio" class="text-neutral-300 hover:text-[#C5A059] transition-colors">Portfolio</a>
+                <a href="#about" class="text-neutral-300 hover:text-[#C5A059] transition-colors">About</a>
+                <a href="#testimonials" class="text-neutral-300 hover:text-[#C5A059] transition-colors">Reviews</a>
+                <a href="#contact" class="text-neutral-300 hover:text-[#C5A059] transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA & Mobile Menu Toggle -->
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-none border border-[#C5A059] text-[#C5A059] hover:bg-[#C5A059] hover:text-black font-medium text-xs uppercase tracking-widest transition-all duration-300">
+                    Book Consultation
+                </a>
+                <button id="menu-toggle" aria-label="Toggle Navigation Menu" class="md:hidden text-neutral-300 hover:text-[#C5A059] focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#121212] border-b border-white/10 px-6 py-6 space-y-4">
+            <a href="#hero" class="block text-neutral-200 hover:text-[#C5A059] text-base font-medium py-1 mobile-link">Home</a>
+            <a href="#services" class="block text-neutral-200 hover:text-[#C5A059] text-base font-medium py-1 mobile-link">Services</a>
+            <a href="#portfolio" class="block text-neutral-200 hover:text-[#C5A059] text-base font-medium py-1 mobile-link">Portfolio</a>
+            <a href="#about" class="block text-neutral-200 hover:text-[#C5A059] text-base font-medium py-1 mobile-link">About Us</a>
+            <a href="#testimonials" class="block text-neutral-200 hover:text-[#C5A059] text-base font-medium py-1 mobile-link">Testimonials</a>
+            <a href="#contact" class="block text-neutral-200 hover:text-[#C5A059] text-base font-medium py-1 mobile-link">Contact</a>
+            <div class="pt-4 border-t border-white/10">
+                <a href="#contact" class="block w-full text-center py-3 bg-[#C5A059] text-black font-semibold uppercase text-xs tracking-widest mobile-link">
+                    Book a Consultation
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-[90vh] flex items-center justify-center bg-neutral-950 overflow-hidden py-20">
+        <!-- Background Image with Gradient Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop" alt="Luxury Interior Living Room" class="w-full h-full object-cover object-center opacity-35 scale-105 animate-pulse duration-[10000ms]">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/70 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0b0b0b] via-transparent to-[#0b0b0b]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-[#C5A059]/40 text-[#C5A059] text-xs uppercase tracking-[0.2em] mb-6 backdrop-blur-sm">
+                <i class="fa-solid fa-gem text-xs"><span> Haute Interior Architecture & Design</span></i>
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+                Elevate Your Living, <br>
+                <span class="gold-gradient-text italic font-normal">Redefine Luxury.</span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-neutral-400 text-base sm:text-lg mb-10 font-light leading-relaxed">
+                Crafting bespoke residential and commercial spaces defined by timeless elegance, uncompromising craftsmanship, and sophisticated modern aesthetics.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-[#C5A059] hover:bg-[#b08d4b] text-black font-semibold text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-xl shadow-[#C5A059]/10">
+                    Book a Consultation
+                </a>
+                <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-white/5 text-white border border-white/20 hover:border-[#C5A059] font-medium text-xs uppercase tracking-[0.2em] transition-all duration-300">
+                    Explore Portfolio
+                </a>
+            </div>
+
+            <!-- Trust Badge or Micro-stats Bar inside Hero -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/10 text-left max-w-4xl mx-auto">
+                <div class="border-l-2 border-[#C5A059] pl-4">
+                    <p class="font-serif text-2xl sm:text-3xl font-bold text-white">100%</p>
+                    <p class="text-xs text-neutral-400 uppercase tracking-wider mt-1">Bespoke Concepts</p>
+                </div>
+                <div class="border-l-2 border-[#C5A059]/50 pl-4">
+                    <p class="font-serif text-2xl sm:text-3xl font-bold text-white">A+ Tier</p>
+                    <p class="text-xs text-neutral-400 uppercase tracking-wider mt-1">Material Quality</p>
+                </div>
+                <div class="border-l-2 border-[#C5A059]/50 pl-4">
+                    <p class="font-serif text-2xl sm:text-3xl font-bold text-white">Turnkey</p>
+                    <p class="text-xs text-neutral-400 uppercase tracking-wider mt-1">End-to-End Execution</p>
+                </div>
+                <div class="border-l-2 border-[#C5A059]/50 pl-4">
+                    <p class="font-serif text-2xl sm:text-3xl font-bold text-white">Demo</p>
+                    <p class="text-xs text-neutral-400 uppercase tracking-wider mt-1">Showcase Site</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATISTICS SECTION -->
+    <section class="py-16 bg-[#121212] border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="p-6 bg-black/40 border border-white/5">
+                    <div class="text-[#C5A059] text-3xl mb-3"><i class="fa-solid fa-award"></i></div>
+                    <div class="font-serif text-3xl sm:text-4xl font-bold text-white mb-1">50+</div>
+                    <div class="text-xs uppercase tracking-widest text-neutral-400">Concept Projects (Demo)</div>
+                </div>
+                <div class="p-6 bg-black/40 border border-white/5">
+                    <div class="text-[#C5A059] text-3xl mb-3"><i class="fa-solid fa-pen-ruler"></i></div>
+                    <div class="font-serif text-3xl sm:text-4xl font-bold text-white mb-1">10+</div>
+                    <div class="text-xs uppercase tracking-widest text-neutral-400">Design Specialists</div>
+                </div>
+                <div class="p-6 bg-black/40 border border-white/5">
+                    <div class="text-[#C5A059] text-3xl mb-3"><i class="fa-solid fa-face-smile"></i></div>
+                    <div class="font-serif text-3xl sm:text-4xl font-bold text-white mb-1">100%</div>
+                    <div class="text-xs uppercase tracking-widest text-neutral-400">Client Satisfaction Goal</div>
+                </div>
+                <div class="p-6 bg-black/40 border border-white/5">
+                    <div class="text-[#C5A059] text-3xl mb-3"><i class="fa-solid fa-city"></i></div>
+                    <div class="font-serif text-3xl sm:text-4xl font-bold text-white mb-1">Metro</div>
+                    <div class="text-xs uppercase tracking-widest text-neutral-400">Primary Service Hubs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 bg-[#0b0b0b]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-[#C5A059] text-xs uppercase tracking-[0.25em] font-semibold block mb-3">Our Expertise</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Tailored Interior Design Services</h2>
+                <div class="w-16 h-0.5 bg-[#C5A059] mx-auto mb-6"></div>
+                <p class="text-neutral-400 text-sm sm:text-base">We combine architectural precision with high-end aesthetic curation to deliver extraordinary living and working environments.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group bg-[#141414] border border-white/10 hover:border-[#C5A059] p-8 transition-all duration-300 relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#C5A059]/5 rounded-bl-full pointer-events-none transition-all group-hover:bg-[#C5A059]/10"></div>
+                    <div>
+                        <div class="w-14 h-14 bg-black border border-[#C5A059]/30 flex items-center justify-center text-[#C5A059] text-xl mb-6 group-hover:border-[#C5A059] transition-colors">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </div>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-4">Residential Interiors</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6 font-light">
+                            Complete home transformations tailored to your lifestyle, incorporating bespoke furniture, bespoke lighting schemes, and rich textural accents.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C5A059] font-semibold group-hover:translate-x-1 transition-transform">
+                        Inquire Now <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group bg-[#141414] border border-white/10 hover:border-[#C5A059] p-8 transition-all duration-300 relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#C5A059]/5 rounded-bl-full pointer-events-none transition-all group-hover:bg-[#C5A059]/10"></div>
+                    <div>
+                        <div class="w-14 h-14 bg-black border border-[#C5A059]/30 flex items-center justify-center text-[#C5A059] text-xl mb-6 group-hover:border-[#C5A059] transition-colors">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-4">Modular Kitchens</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6 font-light">
+                            Ergonomic, high-performance modular kitchen designs engineered with premium hardware, anti-scratch finishes, and smart storage systems.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C5A059] font-semibold group-hover:translate-x-1 transition-transform">
+                        Inquire Now <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group bg-[#141414] border border-white/10 hover:border-[#C5A059] p-8 transition-all duration-300 relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#C5A059]/5 rounded-bl-full pointer-events-none transition-all group-hover:bg-[#C5A059]/10"></div>
+                    <div>
+                        <div class="w-14 h-14 bg-black border border-[#C5A059]/30 flex items-center justify-center text-[#C5A059] text-xl mb-6 group-hover:border-[#C5A059] transition-colors">
+                            <i class="fa-solid fa-bed"></i>
+                        </div>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-4">Bedroom Design</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6 font-light">
+                            Sanctuaries of calm and opulence featuring custom headboards, mood lighting, acoustic paneling, and walk-in wardrobe integration.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C5A059] font-semibold group-hover:translate-x-1 transition-transform">
+                        Inquire Now <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="group bg-[#141414] border border-white/10 hover:border-[#C5A059] p-8 transition-all duration-300 relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#C5A059]/5 rounded-bl-full pointer-events-none transition-all group-hover:bg-[#C5A059]/10"></div>
+                    <div>
+                        <div class="w-14 h-14 bg-black border border-[#C5A059]/30 flex items-center justify-center text-[#C5A059] text-xl mb-6 group-hover:border-[#C5A059] transition-colors">
+                            <i class="fa-solid fa-couch"></i>
+                        </div>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-4">Living Rooms</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6 font-light">
+                            Grand living areas curated for memorable gatherings with statement media walls, bespoke sofas, marble accent tables, and layered lighting.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C5A059] font-semibold group-hover:translate-x-1 transition-transform">
+                        Inquire Now <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="group bg-[#141414] border border-white/10 hover:border-[#C5A059] p-8 transition-all duration-300 relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#C5A059]/5 rounded-bl-full pointer-events-none transition-all group-hover:bg-[#C5A059]/10"></div>
+                    <div>
+                        <div class="w-14 h-14 bg-black border border-[#C5A059]/30 flex items-center justify-center text-[#C5A059] text-xl mb-6 group-hover:border-[#C5A059] transition-colors">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-4">Office Interiors</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6 font-light">
+                            Corporate workspaces, executive boardrooms, and boutique reception areas designed to inspire productivity and reflect brand prestige.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C5A059] font-semibold group-hover:translate-x-1 transition-transform">
+                        Inquire Now <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="group bg-[#141414] border border-white/10 hover:border-[#C5A059] p-8 transition-all duration-300 relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#C5A059]/5 rounded-bl-full pointer-events-none transition-all group-hover:bg-[#C5A059]/10"></div>
+                    <div>
+                        <div class="w-14 h-14 bg-black border border-[#C5A059]/30 flex items-center justify-center text-[#C5A059] text-xl mb-6 group-hover:border-[#C5A059] transition-colors">
+                            <i class="fa-solid fa-hammer"></i>
+                        </div>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mb-4">Turnkey Execution</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed mb-6 font-light">
+                            End-to-end project management covering civil work, electrical, plumbing, false ceiling, custom carpentry, and final white-glove styling.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#C5A059] font-semibold group-hover:translate-x-1 transition-transform">
+                        Inquire Now <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="py-24 bg-[#121212] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-[#C5A059] text-xs uppercase tracking-[0.25em] font-semibold block mb-3">Curated Portfolio</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Selected Concept Works</h2>
+                <div class="w-16 h-0.5 bg-[#C5A059] mx-auto mb-6"></div>
+                <p class="text-neutral-400 text-sm sm:text-base">Explore our signature design concepts showcasing refined material palettes and meticulous spatial planning.</p>
+            </div>
+
+            <!-- Portfolio Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
+                <button class="filter-btn px-6 py-2.5 rounded-none text-xs uppercase tracking-widest font-semibold bg-[#C5A059] text-black transition-all duration-300" data-filter="all">All Projects</button>
+                <button class="filter-btn px-6 py-2.5 rounded-none text-xs uppercase tracking-widest font-semibold bg-black text-neutral-300 hover:text-white border border-white/10 transition-all duration-300" data-filter="residential">Residential</button>
+                <button class="filter-btn px-6 py-2.5 rounded-none text-xs uppercase tracking-widest font-semibold bg-black text-neutral-300 hover:text-white border border-white/10 transition-all duration-300" data-filter="kitchen">Kitchens</button>
+                <button class="filter-btn px-6 py-2.5 rounded-none text-xs uppercase tracking-widest font-semibold bg-black text-neutral-300 hover:text-white border border-white/10 transition-all duration-300" data-filter="bedroom">Bedrooms</button>
+                <button class="filter-btn px-6 py-2.5 rounded-none text-xs uppercase tracking-widest font-semibold bg-black text-neutral-300 hover:text-white border border-white/10 transition-all duration-300" data-filter="office">Office</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="portfolio-item group relative overflow-hidden border border-white/10 bg-black aspect-[4/3]" data-category="residential">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop" alt="The Obsidian Penthouse" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform transition-transform">
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-semibold mb-1 block">Residential Concept</span>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">The Obsidian Penthouse</h3>
+                        <p class="text-neutral-400 text-xs mb-4">Monochromatic luxury with brushed bronze finishes and marble accent walls.</p>
+                        <button onclick="openProjectModal('The Obsidian Penthouse', 'Residential Concept', 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop', 'A sprawling penthouse conceptualized with sleek minimalist lines, dark oak paneling, integrated smart lighting, and bespoke Italian leather furnishings.')" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white hover:text-[#C5A059] font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-item group relative overflow-hidden border border-white/10 bg-black aspect-[4/3]" data-category="kitchen">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop" alt="Aurelia Gourmet Kitchen" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform transition-transform">
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-semibold mb-1 block">Kitchen Concept</span>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Aurelia Gourmet Kitchen</h3>
+                        <p class="text-neutral-400 text-xs mb-4">Seamless handleless cabinetry with waterfall quartz countertops.</p>
+                        <button onclick="openProjectModal('Aurelia Gourmet Kitchen', 'Kitchen Concept', 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop', 'Designed for culinary enthusiasts featuring concealed appliance garages, touch-to-open matte black cabinets, and an expansive breakfast island.')" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white hover:text-[#C5A059] font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-item group relative overflow-hidden border border-white/10 bg-black aspect-[4/3]" data-category="bedroom">
+                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=800&auto=format&fit=crop" alt="Serenade Master Suite" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform transition-transform">
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-semibold mb-1 block">Bedroom Concept</span>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Serenade Master Suite</h3>
+                        <p class="text-neutral-400 text-xs mb-4">Plush upholstered wall panels and warm ambient cove lighting.</p>
+                        <button onclick="openProjectModal('Serenade Master Suite', 'Bedroom Concept', 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=1200&auto=format&fit=crop', 'An ultra-luxurious private retreat featuring bespoke tufted velvet headboards, integrated reading niches, and an adjoining walk-in closet in smoked glass.')" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white hover:text-[#C5A059] font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-item group relative overflow-hidden border border-white/10 bg-black aspect-[4/3]" data-category="residential">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop" alt="The Grand Horizon Villa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform transition-transform">
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-semibold mb-1 block">Residential Concept</span>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">The Grand Horizon Villa</h3>
+                        <p class="text-neutral-400 text-xs mb-4">Open-plan living with double-height ceilings and custom chandeliers.</p>
+                        <button onclick="openProjectModal('The Grand Horizon Villa', 'Residential Concept', 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop', 'A magnificent duplex villa emphasizing vertical space with custom sculptural chandeliers, floor-to-ceiling glass partitions, and travertine flooring.')" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white hover:text-[#C5A059] font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="portfolio-item group relative overflow-hidden border border-white/10 bg-black aspect-[4/3]" data-category="office">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" alt="Vanguard Executive Lounge" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform transition-transform">
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-semibold mb-1 block">Office Concept</span>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Vanguard Executive Lounge</h3>
+                        <p class="text-neutral-400 text-xs mb-4">Sophisticated corporate boardrooms and executive suites.</p>
+                        <button onclick="openProjectModal('Vanguard Executive Lounge', 'Office Concept', 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop', 'Designed to project corporate authority and refinement, featuring acoustic walnut wall panels, custom conference tables with hidden data hubs, and ergonomic designer seating.')" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white hover:text-[#C5A059] font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="portfolio-item group relative overflow-hidden border border-white/10 bg-black aspect-[4/3]" data-category="bedroom">
+                    <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=800&auto=format&fit=crop" alt="Minimalist Zen Sanctuary" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform transition-transform">
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-semibold mb-1 block">Bedroom Concept</span>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Minimalist Zen Sanctuary</h3>
+                        <p class="text-neutral-400 text-xs mb-4">Neutral beige tones, fluted wood accents, and serene minimalism.</p>
+                        <button onclick="openProjectModal('Minimalist Zen Sanctuary', 'Bedroom Concept', 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1200&auto=format&fit=crop', 'A peaceful sleeping quarter focused on clutter-free living, organic textures, Japanese-inspired sliding screens, and concealed warm lighting.')" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white hover:text-[#C5A059] font-semibold transition-colors">
+                            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US & WHY CHOOSE US SECTION -->
+    <section id="about" class="py-24 bg-[#0b0b0b]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left: About Image Collage / Showcase -->
+                <div class="relative">
+                    <div class="relative z-10 border border-white/10 overflow-hidden aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000&auto=format&fit=crop" alt="Renova Luxe Design Studio" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 w-2/3 border border-[#C5A059]/40 overflow-hidden aspect-[4/3] hidden sm:block z-20 bg-black">
+                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop" alt="Interior Detail" class="w-full h-full object-cover opacity-90">
+                    </div>
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-[#C5A059]/10 -z-10 rounded-full blur-2xl"></div>
+                </div>
+
+                <!-- Right: About Content -->
+                <div>
+                    <span class="text-[#C5A059] text-xs uppercase tracking-[0.25em] font-semibold block mb-3">About Renova Luxe</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6">Designing Spaces with Distinction & Soul</h2>
+                    <p class="text-neutral-300 text-base leading-relaxed mb-6 font-light">
+                        At <strong class="text-white font-medium">Renova Luxe Interiors</strong>, we believe that exceptional interior design transcends mere decoration—it shapes how you experience life and work every single day.
+                    </p>
+                    <p class="text-neutral-400 text-sm leading-relaxed mb-8 font-light">
+                        Our concept studio brings together master spatial designers, material experts, and craftsmen dedicated to transforming your vision into reality with uncompromising standards of elegance.
+                    </p>
+
+                    <!-- Why Choose Us Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-white/10">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-[#141414] border border-[#C5A059]/40 flex items-center justify-center text-[#C5A059] shrink-0">
+                                <i class="fa-solid fa-gem text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-white mb-1 text-base">Bespoke Curation</h4>
+                                <p class="text-neutral-400 text-xs leading-relaxed">Every detail is custom-tailored to reflect your individual taste and requirements.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-[#141414] border border-[#C5A059]/40 flex items-center justify-center text-[#C5A059] shrink-0">
+                                <i class="fa-solid fa-shield-halved text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-white mb-1 text-base">Uncompromising Quality</h4>
+                                <p class="text-neutral-400 text-xs leading-relaxed">Sourced from elite global manufacturers and premium artisan workshops.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-[#141414] border border-[#C5A059]/40 flex items-center justify-center text-[#C5A059] shrink-0">
+                                <i class="fa-solid fa-clock text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-white mb-1 text-base">Disciplined Timeline</h4>
+                                <p class="text-neutral-400 text-xs leading-relaxed">Structured project management ensuring transparent milestones and delivery.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-[#141414] border border-[#C5A059]/40 flex items-center justify-center text-[#C5A059] shrink-0">
+                                <i class="fa-solid fa-handshake text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-white mb-1 text-base">Turnkey Execution</h4>
+                                <p class="text-neutral-400 text-xs leading-relaxed">Complete oversight from initial 3D visualization to final styling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-24 bg-[#121212] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-[#C5A059] text-xs uppercase tracking-[0.25em] font-semibold block mb-3">Client Reflections</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Words of Appreciation</h2>
+                <div class="w-16 h-0.5 bg-[#C5A059] mx-auto mb-6"></div>
+                <p class="text-neutral-400 text-sm sm:text-base italic">"Fictional demo testimonials illustrating potential client experiences with our design philosophy."</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-black border border-white/10 p-8 relative flex flex-col justify-between">
+                    <div>
+                        <div class="text-[#C5A059] text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-neutral-300 text-sm leading-relaxed mb-6 italic font-light">
+                            "Renova Luxe transformed our penthouse into an absolute masterpiece. Their attention to lighting mood and textural finishes is truly world-class."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-[#C5A059]/20 border border-[#C5A059] flex items-center justify-center font-serif font-bold text-[#C5A059]">
+                            AR
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-white text-sm">Aakash R.</h4>
+                            <p class="text-neutral-400 text-[11px] uppercase tracking-wider">Demo Client (Penthouse Owner)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-black border border-white/10 p-8 relative flex flex-col justify-between">
+                    <div>
+                        <div class="text-[#C5A059] text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-neutral-300 text-sm leading-relaxed mb-6 italic font-light">
+                            "The modular kitchen and master suite concepts exceeded our expectations. Professional, creative, and remarkably structured throughout."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-[#C5A059]/20 border border-[#C5A059] flex items-center justify-center font-serif font-bold text-[#C5A059]">
+                            PS
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-white text-sm">Priya S.</h4>
+                            <p class="text-neutral-400 text-[11px] uppercase tracking-wider">Demo Client (Villa Resident)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-black border border-white/10 p-8 relative flex flex-col justify-between">
+                    <div>
+                        <div class="text-[#C5A059] text-sm mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-neutral-300 text-sm leading-relaxed mb-6 italic font-light">
+                            "Our corporate boardroom design has received endless compliments from visiting clients. Renova Luxe understands modern executive luxury."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-[#C5A059]/20 border border-[#C5A059] flex items-center justify-center font-serif font-bold text-[#C5A059]">
+                            VK
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-white text-sm">Vikram K.</h4>
+                            <p class="text-neutral-400 text-[11px] uppercase tracking-wider">Demo Client (Managing Director)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & CONSULTATION SECTION -->
+    <section id="contact" class="py-24 bg-[#0b0b0b] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+                <!-- Left: Contact Information & WhatsApp -->
+                <div>
+                    <span class="text-[#C5A059] text-xs uppercase tracking-[0.25em] font-semibold block mb-3">Start a Conversation</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6">Let's Create Your Dream Space</h2>
+                    <div class="w-16 h-0.5 bg-[#C5A059] mb-6"></div>
+                    <p class="text-neutral-400 text-sm sm:text-base leading-relaxed mb-8 font-light">
+                        Schedule a private consultation with our principal interior designers. Visit our concept studio or reach out via phone, email, or WhatsApp.
+                    </p>
+
+                    <!-- Contact Details Cards -->
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4 p-4 bg-[#141414] border border-white/5">
+                            <div class="w-12 h-12 bg-black border border-[#C5A059]/40 flex items-center justify-center text-[#C5A059] shrink-0 text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-white text-sm mb-1">Studio Address (Placeholder)</h4>
+                                <p class="text-neutral-400 text-xs leading-relaxed">123 Luxury Avenue, Design District, Metropolitan City - 560001</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-[#141414] border border-white/5">
+                            <div class="w-12 h-12 bg-black border border-[#C5A059]/40 flex items-center justify-center text-[#C5A059] shrink-0 text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-white text-sm mb-1">Direct Phone (Placeholder)</h4>
+                                <p class="text-neutral-400 text-xs leading-relaxed">+91 98765 43210 / +91 80 1234 5678</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-[#141414] border border-white/5">
+                            <div class="w-12 h-12 bg-black border border-[#C5A059]/40 flex items-center justify-center text-[#C5A059] shrink-0 text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-white text-sm mb-1">Email Inquiries (Placeholder)</h4>
+                                <p class="text-neutral-400 text-xs leading-relaxed">concierge@renovaluxeinteriors-demo.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp Quick Button -->
+                    <a href="https://wa.me/919876543210?text=Hello%20Renova%20Luxe%20Interiors,%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-lg justify-center">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp (Placeholder Number)
+                    </a>
+                </div>
+
+                <!-- Right: Consultation Form -->
+                <div class="bg-[#121212] border border-white/10 p-8 sm:p-10 relative">
+                    <div class="absolute top-0 right-0 bg-[#C5A059] text-black text-[10px] font-bold uppercase tracking-widest px-4 py-1">
+                        Demo Form
+                    </div>
+                    
+                    <h3 class="font-serif text-2xl font-bold text-white mb-2">Book Your Consultation</h3>
+                    <p class="text-neutral-400 text-xs mb-8">Fill in your details and our design concierge will contact you shortly.</p>
+
+                    <form id="consultation-form" class="space-y-6" onsubmit="handleConsultationSubmit(event)">
+                        <div>
+                            <label for="full-name" class="block text-xs uppercase tracking-wider text-neutral-300 font-semibold mb-2">Full Name <span class="text-[#C5A059]">*</span></label>
+                            <input type="text" id="full-name" name="fullName" required class="w-full bg-black border border-white/20 focus:border-[#C5A059] px-4 py-3 text-white text-sm focus:outline-none transition-colors" placeholder="Enter your full name">
+                        </div>
+
+                        <div>
+                            <label for="phone-number" class="block text-xs uppercase tracking-wider text-neutral-300 font-semibold mb-2">Phone Number <span class="text-[#C5A059]">*</span></label>
+                            <input type="tel" id="phone-number" name="phoneNumber" required class="w-full bg-black border border-white/20 focus:border-[#C5A059] px-4 py-3 text-white text-sm focus:outline-none transition-colors" placeholder="Enter your phone number">
+                        </div>
+
+                        <div>
+                            <label for="service-required" class="block text-xs uppercase tracking-wider text-neutral-300 font-semibold mb-2">Service Required <span class="text-[#C5A059]">*</span></label>
+                            <select id="service-required" name="serviceRequired" required class="w-full bg-black border border-white/20 focus:border-[#C5A059] px-4 py-3 text-white text-sm focus:outline-none transition-colors">
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="Residential Interiors">Residential Interiors</option>
+                                <option value="Modular Kitchens">Modular Kitchens</option>
+                                <option value="Bedroom Design">Bedroom Design</option>
+                                <option value="Living Rooms">Living Rooms</option>
+                                <option value="Office Interiors">Office Interiors</option>
+                                <option value="Turnkey Execution">Turnkey Execution</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="project-details" class="block text-xs uppercase tracking-wider text-neutral-300 font-semibold mb-2">Project Details / Message</label>
+                            <textarea id="project-details" name="projectDetails" rows="4" class="w-full bg-black border border-white/20 focus:border-[#C5A059] px-4 py-3 text-white text-sm focus:outline-none transition-colors resize-none" placeholder="Tell us about your space, location, or vision..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-[#C5A059] hover:bg-[#b08d4b] text-black font-semibold text-xs uppercase tracking-[0.2em] transition-all duration-300 shadow-xl">
+                            Submit Consultation Request
+                        </button>
+
+                        <p id="form-feedback" class="text-xs text-center hidden pt-2"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-white/10 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Col 1: About Brand -->
+                <div>
+                    <a href="#" class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 rounded-full border border-[#C5A059] flex items-center justify-center bg-black text-[#C5A059] font-serif font-bold text-lg">
+                            R
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-serif text-lg font-bold tracking-wider text-white">RENOVA LUXE</span>
+                            <span class="text-[9px] tracking-[0.2em] text-[#C5A059] uppercase font-semibold">Interiors · Demo</span>
+                        </div>
+                    </a>
+                    <p class="text-neutral-400 text-xs leading-relaxed mb-6 font-light">
+                        A demo website concept showcasing high-end interior architecture and bespoke spatial curation.
+                    </p>
+                    <div class="flex space-x-4 text-[#C5A059]">
+                        <a href="#" aria-label="Instagram" class="w-9 h-9 border border-white/10 flex items-center justify-center hover:bg-[#C5A059] hover:text-black transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest" class="w-9 h-9 border border-white/10 flex items-center justify-center hover:bg-[#C5A059] hover:text-black transition-colors"><i class="fa-brands fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="w-9 h-9 border border-white/10 flex items-center justify-center hover:bg-[#C5A059] hover:text-black transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="WhatsApp" class="w-9 h-9 border border-white/10 flex items-center justify-center hover:bg-[#C5A059] hover:text-black transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-base mb-6 tracking-wide">Quick Links</h4>
+                    <ul class="space-y-3 text-xs text-neutral-400">
+                        <li><a href="#hero" class="hover:text-[#C5A059] transition-colors">Home</a></li>
+                        <li><a href="#services" class="hover:text-[#C5A059] transition-colors">Services & Expertise</a></li>
+                        <li><a href="#portfolio" class="hover:text-[#C5A059] transition-colors">Project Portfolio</a></li>
+                        <li><a href="#about" class="hover:text-[#C5A059] transition-colors">About Us</a></li>
+                        <li><a href="#testimonials" class="hover:text-[#C5A059] transition-colors">Client Reviews</a></li>
+                        <li><a href="#contact" class="hover:text-[#C5A059] transition-colors">Book Consultation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-base mb-6 tracking-wide">Our Services</h4>
+                    <ul class="space-y-3 text-xs text-neutral-400">
+                        <li><a href="#services" class="hover:text-[#C5A059] transition-colors">Residential Interiors</a></li>
+                        <li><a href="#services" class="hover:text-[#C5A059] transition-colors">Modular Kitchens</a></li>
+                        <li><a href="#services" class="hover:text-[#C5A059] transition-colors">Master Bedroom Design</a></li>
+                        <li><a href="#services" class="hover:text-[#C5A059] transition-colors">Living Room Concepts</a></li>
+                        <li><a href="#services" class="hover:text-[#C5A059] transition-colors">Office & Corporate Interiors</a></li>
+                        <li><a href="#services" class="hover:text-[#C5A059] transition-colors">Turnkey Execution</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Newsletter -->
+                <div>
+                    <h4 class="font-serif font-bold text-white text-base mb-6 tracking-wide">Design Newsletter</h4>
+                    <p class="text-neutral-400 text-xs mb-4 font-light">Subscribe to receive design trend insights and concept previews.</p>
+                    <form id="newsletter-form" onsubmit="handleNewsletterSubmit(event)" class="space-y-3">
+                        <input type="email" id="newsletter-email" required placeholder="Enter your email" class="w-full bg-[#141414] border border-white/20 focus:border-[#C5A059] px-4 py-2.5 text-white text-xs focus:outline-none transition-colors">
+                        <button type="submit" class="w-full py-2.5 bg-[#C5A059] hover:bg-[#b08d4b] text-black font-semibold text-[11px] uppercase tracking-widest transition-all">
+                            Subscribe
+                        </button>
+                        <p id="newsletter-feedback" class="text-[11px] hidden"></p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-xs text-neutral-500">
+                <p>&copy; 2026 Renova Luxe Interiors. Demo website concept. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" onclick="openLegalModal('Privacy Policy', 'This is a demo privacy policy. No real user data or contact details submitted through this static demonstration website are stored, tracked, or shared with third parties.')" class="hover:text-neutral-300 transition-colors">Privacy Policy</a>
+                    <a href="#" onclick="openLegalModal('Terms of Service', 'These are demo terms of service. All imagery, reviews, and project data on this website are for demonstration and layout presentation purposes only.')" class="hover:text-neutral-300 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PROJECT DETAILS MODAL -->
+    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden p-4">
+        <div class="bg-[#121212] border border-[#C5A059]/40 max-w-2xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-neutral-400 hover:text-white text-xl p-2 focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span id="modal-category" class="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-semibold mb-2 block"></span>
+            <h3 id="modal-title" class="font-serif text-2xl sm:text-3xl font-bold text-white mb-4"></h3>
+            <div class="w-full aspect-video mb-6 border border-white/10 overflow-hidden">
+                <img id="modal-image" src="" alt="Project View" class="w-full h-full object-cover">
+            </div>
+            <p id="modal-description" class="text-neutral-300 text-sm leading-relaxed mb-6 font-light"></p>
+            <div class="flex justify-end gap-4">
+                <button onclick="closeProjectModal()" class="px-6 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-white text-xs uppercase tracking-widest font-semibold transition-colors">
+                    Close
+                </button>
+                <a href="#contact" onclick="closeProjectModal()" class="px-6 py-2.5 bg-[#C5A059] hover:bg-[#b08d4b] text-black text-xs uppercase tracking-widest font-semibold transition-colors">
+                    Inquire About Similar Design
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEGAL / INFO MODAL -->
+    <div id="legal-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden p-4">
+        <div class="bg-[#121212] border border-white/20 max-w-lg w-full p-6 sm:p-8 relative">
+            <button onclick="closeLegalModal()" class="absolute top-4 right-4 text-neutral-400 hover:text-white text-xl p-2 focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="legal-modal-title" class="font-serif text-xl font-bold text-white mb-4"></h3>
+            <p id="legal-modal-text" class="text-neutral-300 text-sm leading-relaxed mb-6 font-light"></p>
+            <button onclick="closeLegalModal()" class="w-full py-3 bg-[#C5A059] hover:bg-[#b08d4b] text-black text-xs uppercase tracking-widest font-semibold transition-colors">
+                Understood
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Portfolio Category Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active styling from all buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-[#C5A059]', 'text-black');
+                    b.classList.add('bg-black', 'text-neutral-300', 'border', 'border-white/10');
+                });
+                // Add active styling to clicked button
+                btn.classList.remove('bg-black', 'text-neutral-300', 'border', 'border-white/10');
+                btn.classList.add('bg-[#C5A059]', 'text-black');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Project Modal Functions
+        function openProjectModal(title, category, imgSrc, description) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-category').innerText = category;
+            document.getElementById('modal-image').src = imgSrc;
+            document.getElementById('modal-description').innerText = description;
+            document.getElementById('project-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Legal Modal Functions
+        function openLegalModal(title, text) {
+            document.getElementById('legal-modal-title').innerText = title;
+            document.getElementById('legal-modal-text').innerText = text;
+            document.getElementById('legal-modal.hidden').classList.remove('hidden'); // Fixed below
+            document.getElementById('legal-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLegalModal() {
+            document.getElementById('legal-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals on clicking backdrop
+        window.addEventListener('click', (e) => {
+            const projModal = document.getElementById('project-modal');
+            const legalModal = document.getElementById('legal-modal');
+            if (e.target === projModal) closeProjectModal();
+            if (e.target === legalModal) closeLegalModal();
+        });
+
+        // Form Handling (Demo mode notice)
+        function handleConsultationSubmit(event) {
+            event.preventDefault();
+            const feedback = document.getElementById('form-feedback');
+            feedback.classList.remove('hidden');
+            feedback.className = "text-xs text-center text-amber-400 pt-2 font-medium";
+            feedback.innerHTML = `<i class="fa-solid fa-circle-info mr-1"></i> Demo Mode: Form submission simulated successfully. Connect a backend service (like Formspree or EmailJS) to receive live inquiries.`;
+            document.getElementById('consultation-form').reset();
+        }
+
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            const feedback = document.getElementById('newsletter-feedback');
+            feedback.classList.remove('hidden');
+            feedback.className = "text-[11px] text-amber-400 pt-1 font-medium";
+            feedback.innerHTML = `<i class="fa-solid fa-circle-info mr-1"></i> Subscribed successfully (Demo Mode)!`;
+            document.getElementById('newsletter-form').reset();
+        }
+    </script>
+</body>
+</html>
